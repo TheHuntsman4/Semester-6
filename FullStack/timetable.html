@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .timetable-container {
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .time-slot {
+            font-weight: bold;
+            background-color: #f2f2f2;
+        }
+        
+        .lunch {
+            background-color: #FFEB3B;
+            font-weight: bold;
+        }
+        
+        .cs101 {
+            background-color: #E1F5FE;
+        }
+        
+        .math202 {
+            background-color: #F3E5F5;
+        }
+        
+        .phys101 {
+            background-color: #E8F5E9;
+        }
+        
+        .eng101 {
+            background-color: #FFF3E0;
+        }
+        
+        .lab {
+            background-color: #FFEBEE;
+        }
+        
+        .free {
+            background-color: #F5F5F5;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">Back to Home</a>
+        <h1>College Timetable</h1>
+        <p>Weekly schedule with merged cells for classes and breaks.</p>
+        
+        <div class="timetable-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time/Day</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-slot">9:00 - 10:00</td>
+                        <td class="cs101">CS101<br>Room 301</td>
+                        <td class="math202">MATH202<br>Room 105</td>
+                        <td class="cs101">CS101<br>Room 301</td>
+                        <td class="math202">MATH202<br>Room 105</td>
+                        <td class="free">Free Period</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">10:00 - 11:00</td>
+                        <td class="phys101">PHYS101<br>Room 201</td>
+                        <td class="eng101">ENG101<br>Room 402</td>
+                        <td class="phys101">PHYS101<br>Room 201</td>
+                        <td class="eng101">ENG101<br>Room 402</td>
+                        <td class="math202">MATH202<br>Room 105</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">11:00 - 12:00</td>
+                        <td class="eng101">ENG101<br>Room 402</td>
+                        <td class="cs101">CS101<br>Room 301</td>
+                        <td class="free">Free Period</td>
+                        <td class="phys101">PHYS101<br>Room 201</td>
+                        <td class="eng101">ENG101<br>Room 402</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">12:00 - 1:00</td>
+                        <td colspan="5" class="lunch">LUNCH BREAK</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">1:00 - 3:00</td>
+                        <td colspan="2" class="lab">CS Lab<br>Lab Room 101</td>
+                        <td class="math202">MATH202<br>Room 105</td>
+                        <td colspan="2" class="lab">PHYS Lab<br>Lab Room 203</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">3:00 - 4:00</td>
+                        <td class="free">Free Period</td>
+                        <td class="free">Free Period</td>
+                        <td class="cs101">CS101<br>Room 301</td>
+                        <td class="free">Free Period</td>
+                        <td rowspan="2" class="lab">Project Work<br>Lab Room 105</td>
+                    </tr>
+                    <tr>
+                        <td class="time-slot">4:00 - 5:00</td>
+                        <td class="math202">MATH202<br>Room 105</td>
+                        <td class="phys101">PHYS101<br>Room 201</td>
+                        <td class="free">Free Period</td>
+                        <td class="free">Free Period</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html> 

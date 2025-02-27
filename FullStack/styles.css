@@ -1,0 +1,60 @@
+/* Common styles for all pages */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    text-decoration: none;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background-color: #ddd;
+} 
