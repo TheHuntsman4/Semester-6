@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers Example</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        form {
+            border-radius: 10px;
+            padding: 30px;
+            background-color: aliceblue;
+            border: 4px solid lightgray;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: blue;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        span.error {
+            color: red;
+            font-size: 12px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .click-box {
+            padding: 10px;
+            background-color: lightblue;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="name" value="">
+                <span class="error" id="NameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Tel:</label>
+                <input type="tel" id="number" value="">
+                <span class="error" id="NumError"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <textarea id="address" cols="50" rows="3"></textarea>
+                <span class="error" id="AddressError"></span>
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- OnClick Example -->
+    <div class="click-box" id="clickBox">Click Me!</div>
+
+    <!-- OnFocus Example -->
+    <input type="text" id="focusInput" placeholder="Click to focus">
+    <p class="message" id="focusMessage"></p>
+
+    <!-- OnChange Example -->
+    <input type="text" id="changeInput" placeholder="Type something">
+    <p class="message" id="changeMessage"></p>
+
+    <script>
+        document.getElementById("form1").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            let valid = true;
+            let name = document.getElementById("name").value.trim();
+            let number = document.getElementById("number").value.trim();
+            let address = document.getElementById("address").value.trim();
+
+            let name_error = document.getElementById("NameError");
+            let tele_error = document.getElementById("NumError");
+            let address_error = document.getElementById("AddressError");
+
+            name_error.innerText = "";
+            tele_error.innerText = "";
+            address_error.innerText = "";
+
+            if(name.length < 3){
+                name_error.innerText = "Name should be at least 3 characters long";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Form submitted successfully!");
+            }
+        });
+
+        // OnClick Event
+        document.getElementById("clickBox").addEventListener("click", function() {
+            this.style.backgroundColor = this.style.backgroundColor === "lightblue" ? "lightcoral" : "lightblue";
+            this.innerText = "Clicked!";
+        });
+
+        // OnFocus Event
+        document.getElementById("focusInput").addEventListener("focus", function() {
+            this.classList.add("highlight");
+            document.getElementById("focusMessage").innerText = "Input field is focused!";
+        });
+
+        document.getElementById("focusInput").addEventListener("blur", function() {
+            this.classList.remove("highlight");
+            document.getElementById("focusMessage").innerText = "";
+        });
+
+        // OnChange Event
+        document.getElementById("changeInput").addEventListener("change", function() {
+            document.getElementById("changeMessage").innerText = "Value changed to: " + this.value;
+        });
+    </script>
+
+</body>
+</html>

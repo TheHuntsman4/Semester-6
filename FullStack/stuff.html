@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Example</title>
+    <style>
+
+        a:link{
+            color: green;
+            background-color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blue;
+            background-color: black;
+        }
+        a:visited{
+            color: purple;
+            background-color: gold;
+            text-decoration: underline
+        }
+
+        a:active{
+            color: green;
+            background-color: black;
+        }
+        /* Parent container */
+        .container {
+            position: relative; /* This acts as a reference for absolute elements */
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            margin: 50px;
+        }
+
+        /* Absolute positioned div (relative to the .container) */
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background-color: red;
+        }
+
+        /* Fixed positioned div (relative to the viewport) */
+        .fixed-box {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <dl>
+        <dt>List Name one
+            <dd> This si where the information abour the list number one would go</dd>
+        </dt>
+        <dt>List Name two
+            <dd> This si where the information abour the list number two would go &nbsp <a href="https://www.youtube.com/watch?v=SmhBrVOqF08&list=PLPaVeFuGLwUQsFf4wvhzpmo6Og3Qj8ZvT&index=7" target="_top" title="Someting fun">Click me to go to youtube</a></dd>
+        </dt>
+    </dl>
+
+    <table border="1">
+        <tr>
+            <th>This is a heading 1</th>
+            <th>This is a heading 2</th>
+            <th>This is a heading 3</th>    
+        </tr>
+        
+        <tr><td>1,1</td> <td>1,2</td> <td>1,3</td></tr>
+        <tr><td>2,1</td> <td>2,2</td> <td>2,3</td></tr>
+        <tr><td>3,1</td> <td>3,2</td> <td>3,3</td></tr>
+    </table>
+    
+
+    <table border="1">
+        <colgroup>
+            <col span="1" style="background-color: lightblue;">
+            <col span="1" style="background-color: lightpink;">
+        </colgroup>
+        <tr><th>Col 1</th> <th>Col 2</th></tr>
+        <tr><td>Data 1</td> <td>Data 2</td></tr>
+    </table>
+    <table border="1"
+    <tr>
+        <th>Heading 1</th>
+        <th colspan="3">Heading 2</th>
+        <th>Heading 3</th>
+        <th>Heading 4</th>
+        <th>Heading 5</th>
+    </tr>
+    <tr>
+        <td>1,1</td>
+        <td>1,2</td>
+        <td rowspan="4">1,3</td>
+        <td>1,4</td>
+    </tr>
+    <tr>
+        <td>2,1</td>
+        <td>2,2</td>
+        <td>2,3</td>
+        <td>2,4</td>
+    </tr>
+    <tr>
+        <td>3,1</td>
+        <td>3,2</td>
+        <td>3,3</td>
+        <td>3,4</td>
+    </tr>
+    <tr>
+        <td>4,1</td>
+        <td>4,2</td>
+        <td>4,3</td>
+        <td>4,4</td>
+    </tr>
+</table>
+
+
+<table border="1">
+    <tr>
+        <th>Heading 1</th>
+        <th colspan="3">Heading 2</th> <!-- Spans 3 columns -->
+        <th rowspan="5">Heading 3</th> <!-- Spans all data rows -->
+        <th>Heading 4</th>
+    </tr>
+    <tr>
+        <td>1,1</td>
+        <td>1,2</td>
+        <td>1,3</td>
+        <td>1,4</td>
+        <td>1,5</td> <!-- Additional column to balance table -->
+    </tr>
+    <tr>
+        <td>2,1</td>
+        <td>2,2</td>
+        <td>2,3</td>
+        <td>2,4</td>
+        <td>2,5</td>
+    </tr>
+    <tr>
+        <td>3,1</td>
+        <td>3,2</td>
+        <td>3,3</td>
+        <td>3,4</td>
+        <td>3,5</td>
+    </tr>
+    <tr>
+        <td>4,1</td>
+        <td>4,2</td>
+        <td>4,3</td>
+        <td>4,4</td>
+        <td>4,5</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>
