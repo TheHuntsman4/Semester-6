@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h1 class="text-2xl font-bold mb-6">Prediction History</h1>
+            
+            <div class="mb-6">
+                <label for="userName" class="block text-sm font-medium text-gray-700 mb-2">Enter Your Name</label>
+                <input type="text" id="userName" 
+                       class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       placeholder="Enter your name">
+                <button onclick="fetchHistory()" 
+                        class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                    View History
+                </button>
+                <button onclick="window.location.href='./page.html'" class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                    Calculate Calories
+                </button>
+            </div>
+        </div>
+        <div id="historyTable" class="hidden w-100vw justify-center items-center">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ">Gender</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ">Age</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Height</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Weight</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Heart Rate</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Body Temp</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Calories</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200" id="historyTableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="noDataMessage" class="hidden text-center py-4 text-gray-500">
+            No prediction history found for this user.
+        </div>
+    </div>
+
+    <script>
+        async function fetchHistory() {
+            const userName = document.getElementById('userName').value.trim();
+            if (!userName) {
+                alert('Please enter your name');
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:8080/history?userId=${encodeURIComponent(userName)}`);
+                const data = await response.json();
+
+                const tableBody = document.getElementById('historyTableBody');
+                const table = document.getElementById('historyTable');
+                const noDataMessage = document.getElementById('noDataMessage');
+
+                if (data.length === 0) {
+                    table.classList.add('hidden');
+                    noDataMessage.classList.remove('hidden');
+                    return;
+                }
+
+                tableBody.innerHTML = '';
+                table.classList.remove('hidden');
+                noDataMessage.classList.add('hidden');
+
+                data.forEach(record => {
+                    const date = new Date(record.timestamp).toLocaleString();
+                    const row = `
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">${date}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.gender == 1 ? "Male" :  "Female"}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.age}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.height}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.weight}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.duration}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.heartRate}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.input.bodyTemp}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">${record.prediction.toFixed(2)}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error('Error fetching history:', error);
+                alert('Error fetching history. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,31 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/modelserver_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PythonResponse$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/PythonResponse$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ModelServer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/ModelServer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PythonRequest$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/PythonRequest$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PredictionRecord.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/PredictionRecord.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MongoJsonFormats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/MongoJsonFormats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PythonRequest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/PythonRequest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Input.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/Input.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PythonResponse.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/PythonResponse.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ModelServer$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/ModelServer$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MongoJsonFormats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/MongoJsonFormats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PredictionRecord$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/PredictionRecord$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Input$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/Input$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MongoJsonFormats$ObjectIdJsonFormat$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/MongoJsonFormats$ObjectIdJsonFormat$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ModelServer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/the_architect/6/bda/scala-project/ModelServer/target/scala-2.12/classes/ModelServer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
